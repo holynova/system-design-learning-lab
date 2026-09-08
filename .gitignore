@@ -1,0 +1,8 @@
+node_modules/
+dist/
+docs/assets/screenshot.png
+*.log
+.DS_Store
+.env
+.env.*
+!.env.example
