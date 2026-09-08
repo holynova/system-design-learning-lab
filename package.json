@@ -9,7 +9,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "check": "vite build",
-    "capture:preview": "node scripts/capture-preview.mjs"
+    "capture:preview": "node scripts/verify.mjs",
+    "test": "node scripts/verify.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
