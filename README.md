@@ -8,6 +8,27 @@
 
 <img src="assets/qr.png" width="164" alt="扫码打开学习网站">
 
-`npm install` 后运行 `npm run dev`；`npm run build` 构建至 `docs/`，使用 `master:/docs` 发布。验证：`node scripts/verify.mjs`。
+## 从哪一章开始
+
+| 实验 | 动手探索 |
+| --- | --- |
+| KV 存储 | 改变副本与确认门槛，观察读写行为 |
+| Snowflake ID | 拆解 ID，注入时钟故障 |
+| 短网址 | 创建短码、制造冲突，追踪缓存跳转 |
+
+## 本地运行
+
+```bash
+npm install
+npm run dev
+```
+
+打开终端输出的本地地址。构建命令：
+
+```bash
+npm run build
+```
+
+构建输出至 `docs/`，GitHub Pages 使用 `master:/docs`。浏览器验证脚本为 `node scripts/verify.mjs`；执行环境与访问地址见该脚本。
 
 版本 1.0.0。旧版本保存在 Git 历史中。重建范围与模型边界见 [REBUILD.md](REBUILD.md)。
