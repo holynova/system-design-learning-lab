@@ -2,6 +2,11 @@
 
 从需求与原书重做，聚焦第一卷第 6、7、8 章：操作 KV 副本与确认门槛，拆解 Snowflake ID 并注入时钟故障，创建短码、制造冲突并追踪缓存跳转。每章包含知识地图、四道练习、误区讲解和本地学习笔记。所有请求均为教学模拟。
 
+<p align="center">
+  <img src="assets/readme/hero.svg" width="100%" alt="系统设计实验册: 从需求与原书重做，聚焦第一卷第 6、7、8 章：操作 KV 副本与确认门槛，拆解 Snowflake ID 并注入时钟故障，创建短码、制造冲突并追踪缓存跳转。每章包含知识地图、四道练习、误区讲解和本地学习笔记。所有请求均为教学模拟。">
+</p>
+
+
 [在线学习](https://holynova.github.io/system-design-learning-lab/) · [GitHub 仓库](https://github.com/holynova/system-design-learning-lab) · [原书](https://learning-guide.gitbook.io/system-design-interview)
 
 ![有效内容截图](assets/screenshot.png)
