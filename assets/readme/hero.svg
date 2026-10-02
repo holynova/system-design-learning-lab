@@ -1,0 +1,252 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="440" viewBox="0 0 1200 440" role="img" aria-labelledby="title desc">
+  <title id="title">System Design Learning Lab - Interactive Fault Injection Laboratory</title>
+  <desc id="desc">Visual workbench for the interactive system design companion, featuring Key-Value Quorum replication, 64-bit Snowflake clock drift injection, and URL shortener cache divergence simulation.</desc>
+
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="labBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080d1a"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#060913"/>
+    </linearGradient>
+
+    <radialGradient id="labCyanGlow" cx="75%" cy="25%" r="55%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="faultRubyGlow" cx="25%" cy="75%" r="50%">
+      <stop offset="0%" stop-color="#f43f5e" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#f43f5e" stop-opacity="0"/>
+    </radialGradient>
+
+    <pattern id="labGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.8" stroke-opacity="0.5"/>
+      <circle cx="0" cy="0" r="1.2" fill="#38bdf8" fill-opacity="0.3"/>
+    </pattern>
+
+    <linearGradient id="labCardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#131e33"/>
+      <stop offset="100%" stop-color="#0d1527"/>
+    </linearGradient>
+
+    <linearGradient id="cyanEmeraldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#a7f3d0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Canvas Frame -->
+  <rect width="1200" height="440" rx="16" fill="url(#labBg)"/>
+  <rect width="1200" height="440" rx="16" fill="url(#labGrid)"/>
+  <rect width="1200" height="440" rx="16" fill="url(#labCyanGlow)"/>
+  <rect width="1200" height="440" rx="16" fill="url(#faultRubyGlow)"/>
+  <rect x="1" y="1" width="1198" height="438" rx="15" fill="none" stroke="#1e293b" stroke-width="1.5"/>
+
+  <!-- LEFT COLUMN: Identity & Interactive Lab Mission -->
+  <g id="lab-left" transform="translate(60, 48)">
+    <!-- Eyebrow Badge -->
+    <g id="eyebrow">
+      <rect x="0" y="0" width="375" height="28" rx="14" fill="#0c233c" stroke="#0284c7" stroke-width="1"/>
+      <circle cx="14" cy="14" r="4" fill="#38bdf8"/>
+      <text x="26" y="19" font-family="ui-monospace, monospace" font-size="11.5" font-weight="600" fill="#7dd3fc" letter-spacing="1">INTERACTIVE LAB · FAULT INJECTION WORKBENCH</text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="0" y="78" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="38" font-weight="800" fill="#f8fafc" letter-spacing="-0.5">
+      System Design Learning Lab
+    </text>
+    <text x="0" y="118" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="24" font-weight="600" fill="url(#cyanEmeraldGrad)">
+      系统设计实验册 (交互式仿真研习室)
+    </text>
+
+    <!-- Value Proposition -->
+    <text x="0" y="158" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="14.5" fill="#94a3b8" line-height="24">
+      <tspan x="0" dy="0">告别被动死记硬背！聚焦第一卷核心第 6、7、8 章分布式机制。</tspan>
+      <tspan x="0" dy="24">可实时调配 Quorum 门槛、制造网络分区、注入时钟回拨，</tspan>
+      <tspan x="0" dy="24">并对比 301/302 缓存与点击统计差异，全链路掌控系统边界。</tspan>
+    </text>
+
+    <!-- Feature Metric Pills -->
+    <g id="metric-pills" transform="translate(0, 240)">
+      <!-- Pill 1 -->
+      <g transform="translate(0, 0)">
+        <rect width="112" height="48" rx="8" fill="#111c30" stroke="#1e293b" stroke-width="1"/>
+        <text x="14" y="22" font-family="ui-monospace, monospace" font-size="16" font-weight="700" fill="#38bdf8">3 大实验台</text>
+        <text x="14" y="38" font-family="-apple-system, sans-serif" font-size="10.5" fill="#64748b">CH06 · 07 · 08</text>
+      </g>
+      <!-- Pill 2 -->
+      <g transform="translate(122, 0)">
+        <rect width="118" height="48" rx="8" fill="#111c30" stroke="#f43f5e" stroke-width="1" stroke-opacity="0.4"/>
+        <text x="14" y="22" font-family="ui-monospace, monospace" font-size="16" font-weight="700" fill="#fb7185">故障注入</text>
+        <text x="14" y="38" font-family="-apple-system, sans-serif" font-size="10.5" fill="#64748b">FAULT INJECTION</text>
+      </g>
+      <!-- Pill 3 -->
+      <g transform="translate(250, 0)">
+        <rect width="112" height="48" rx="8" fill="#111c30" stroke="#10b981" stroke-width="1" stroke-opacity="0.4"/>
+        <text x="14" y="22" font-family="ui-monospace, monospace" font-size="16" font-weight="700" fill="#34d399">12 道练习</text>
+        <text x="14" y="38" font-family="-apple-system, sans-serif" font-size="10.5" fill="#64748b">DRILLS &amp; QUIZ</text>
+      </g>
+      <!-- Pill 4 -->
+      <g transform="translate(372, 0)">
+        <rect width="128" height="48" rx="8" fill="#111c30" stroke="#818cf8" stroke-width="1" stroke-opacity="0.4"/>
+        <text x="14" y="22" font-family="ui-monospace, monospace" font-size="16" font-weight="700" fill="#a5b4fc">React + Vite</text>
+        <text x="14" y="38" font-family="-apple-system, sans-serif" font-size="10.5" fill="#64748b">ZERO BACKEND</text>
+      </g>
+    </g>
+
+    <!-- Command / Live Link Hint -->
+    <g id="command-hint" transform="translate(0, 310)">
+      <rect width="500" height="36" rx="6" fill="#070b14" stroke="#1e293b" stroke-width="1"/>
+      <text x="14" y="23" font-family="ui-monospace, monospace" font-size="13" fill="#38bdf8">$</text>
+      <text x="30" y="23" font-family="ui-monospace, monospace" font-size="13" fill="#e2e8f0">npm run dev</text>
+      <text x="180" y="23" font-family="ui-monospace, monospace" font-size="12" fill="#64748b"># holynova.github.io/system-design-learning-lab</text>
+    </g>
+  </g>
+
+  <!-- RIGHT COLUMN: Multi-Console Fault Injection Workbench -->
+  <g id="lab-right" transform="translate(590, 36)">
+    <!-- TOP CARD: KV Quorum & Partition Console (Ch06) -->
+    <g id="card-kv-quorum" transform="translate(0, 0)">
+      <rect width="560" height="175" rx="10" fill="url(#labCardGrad)" stroke="#1e293b" stroke-width="1.2"/>
+      
+      <!-- Card Header -->
+      <circle cx="16" cy="18" r="4" fill="#38bdf8"/>
+      <text x="28" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#e2e8f0">Ch06 · 一份数据三个答案 (KV 复制与 Quorum 门槛)</text>
+      <text x="475" y="21" font-family="ui-monospace, monospace" font-size="10" fill="#38bdf8">N=3 W=2 R=2</text>
+
+      <!-- Simulation State Graphic -->
+      <g transform="translate(20, 42)">
+        <!-- Node A (Acknowledged) -->
+        <g transform="translate(0, 0)">
+          <rect width="105" height="58" rx="6" fill="#064e3b" stroke="#10b981" stroke-width="1.2"/>
+          <text x="12" y="20" font-family="ui-monospace, monospace" font-size="12" font-weight="700" fill="#6ee7b7">Node A</text>
+          <text x="12" y="38" font-family="ui-monospace, monospace" font-size="10" fill="#d1fae5">val: x=2 (v2)</text>
+          <text x="12" y="50" font-family="ui-monospace, monospace" font-size="8.5" fill="#34d399">ACK W1 ✔</text>
+        </g>
+
+        <!-- Replication Arrow A -> B -->
+        <path d="M 112 29 L 140 29" stroke="#10b981" stroke-width="1.5" stroke-dasharray="2 2"/>
+        <polygon points="144,29 138,26 138,32" fill="#10b981"/>
+
+        <!-- Node B (Acknowledged) -->
+        <g transform="translate(150, 0)">
+          <rect width="105" height="58" rx="6" fill="#064e3b" stroke="#10b981" stroke-width="1.2"/>
+          <text x="12" y="20" font-family="ui-monospace, monospace" font-size="12" font-weight="700" fill="#6ee7b7">Node B</text>
+          <text x="12" y="38" font-family="ui-monospace, monospace" font-size="10" fill="#d1fae5">val: x=2 (v2)</text>
+          <text x="12" y="50" font-family="ui-monospace, monospace" font-size="8.5" fill="#34d399">ACK W2 ✔</text>
+        </g>
+
+        <!-- Network Partition Barrier -->
+        <g transform="translate(268, -4)">
+          <line x1="14" y1="0" x2="14" y2="68" stroke="#f43f5e" stroke-width="2" stroke-dasharray="4 3"/>
+          <rect x="0" y="24" width="28" height="18" rx="3" fill="#4c0519" stroke="#f43f5e" stroke-width="0.8"/>
+          <text x="14" y="36" font-family="ui-monospace, monospace" font-size="8.5" font-weight="700" fill="#fecdd3" text-anchor="middle">CUT</text>
+        </g>
+
+        <!-- Node C (Isolated / Stale v1) -->
+        <g transform="translate(310, 0)">
+          <rect width="105" height="58" rx="6" fill="#31131b" stroke="#f43f5e" stroke-width="1.2"/>
+          <text x="12" y="20" font-family="ui-monospace, monospace" font-size="12" font-weight="700" fill="#fca5a5">Node C</text>
+          <text x="12" y="38" font-family="ui-monospace, monospace" font-size="10" fill="#fee2e2">val: x=1 (v1)</text>
+          <text x="12" y="50" font-family="ui-monospace, monospace" font-size="8.5" fill="#fb7185">ISOLATED ✖</text>
+        </g>
+
+        <!-- Quorum Evaluator Box -->
+        <g transform="translate(425, 0)">
+          <rect width="90" height="58" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+          <text x="8" y="16" font-family="ui-monospace, monospace" font-size="8.5" fill="#64748b">QUORUM:</text>
+          <text x="8" y="32" font-family="ui-monospace, monospace" font-size="10" font-weight="700" fill="#38bdf8">W=2 MET</text>
+          <text x="8" y="48" font-family="ui-monospace, monospace" font-size="8.5" fill="#34d399">R+W &gt; N (4&gt;3)</text>
+        </g>
+
+        <!-- Log / Action Strip -->
+        <g transform="translate(0, 68)">
+          <rect width="520" height="28" rx="4" fill="#090d16" stroke="#1e293b" stroke-width="0.8"/>
+          <text x="10" y="18" font-family="ui-monospace, monospace" font-size="9.5" fill="#94a3b8">
+            [EVENT] Read {A, C} 返回版本 {v2, v1} → 单写者版本协调命中最新 v2 → 触发后台读修复 (Read-Repair)
+          </text>
+        </g>
+      </g>
+    </g>
+
+    <!-- BOTTOM-LEFT: Snowflake Clock Fault Injection (Ch07) -->
+    <g id="card-snowflake-fault" transform="translate(0, 190)">
+      <rect width="275" height="175" rx="10" fill="url(#labCardGrad)" stroke="#1e293b" stroke-width="1.2"/>
+      <circle cx="16" cy="18" r="4" fill="#fbbf24"/>
+      <text x="28" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12.5" font-weight="700" fill="#e2e8f0">Ch07 · 拆解唯一 ID (时钟故障)</text>
+      <text x="218" y="21" font-family="ui-monospace, monospace" font-size="10" fill="#fbbf24">64-bit</text>
+
+      <!-- Bitfield & Fault graphic -->
+      <g transform="translate(14, 40)">
+        <!-- Bitfield bar -->
+        <rect x="0" y="0" width="12" height="20" rx="2" fill="#334155"/>
+        <text x="6" y="14" font-family="ui-monospace, monospace" font-size="8" fill="#94a3b8" text-anchor="middle">0</text>
+        <rect x="14" y="0" width="105" height="20" rx="2" fill="#1e3a5f"/>
+        <text x="66" y="14" font-family="ui-monospace, monospace" font-size="8" fill="#38bdf8" text-anchor="middle">41b Timestamp</text>
+        <rect x="121" y="0" width="34" height="20" rx="2" fill="#2d2254"/>
+        <text x="138" y="14" font-family="ui-monospace, monospace" font-size="8" fill="#c084fc" text-anchor="middle">5b DC</text>
+        <rect x="157" y="0" width="34" height="20" rx="2" fill="#3b2d54"/>
+        <text x="174" y="14" font-family="ui-monospace, monospace" font-size="8" fill="#e879f9" text-anchor="middle">5b Wk</text>
+        <rect x="193" y="0" width="54" height="20" rx="2" fill="#164e63"/>
+        <text x="220" y="14" font-family="ui-monospace, monospace" font-size="8" fill="#2dd4bf" text-anchor="middle">12b (4096)</text>
+      </g>
+
+      <!-- Clock Injection Alert -->
+      <g transform="translate(14, 70)">
+        <rect width="247" height="34" rx="4" fill="#3a1d0d" stroke="#f59e0b" stroke-width="0.8"/>
+        <text x="8" y="14" font-family="ui-monospace, monospace" font-size="8.5" font-weight="700" fill="#fbbf24">FAULT: 时钟回拨注入 (Clock Drift)</text>
+        <text x="8" y="27" font-family="ui-monospace, monospace" font-size="8" fill="#fed7aa">t: 1000ms → 995ms (Δ = -5ms) ⚠ 触发保护</text>
+      </g>
+
+      <!-- Resolution Output -->
+      <g transform="translate(14, 112)">
+        <rect width="247" height="42" rx="4" fill="#090d16" stroke="#1e293b" stroke-width="0.8"/>
+        <text x="8" y="16" font-family="ui-monospace, monospace" font-size="8.5" fill="#64748b">STATUS:</text>
+        <text x="54" y="16" font-family="ui-monospace, monospace" font-size="8.5" font-weight="700" fill="#34d399">REJECT / WAIT UNTIL 1000ms</text>
+        <text x="8" y="32" font-family="ui-monospace, monospace" font-size="8" fill="#94a3b8">保证同一毫秒 4096 上限及全局严格递增</text>
+      </g>
+    </g>
+
+    <!-- BOTTOM-RIGHT: URL Shortener 301/302 Divergence (Ch08) -->
+    <g id="card-url-cache" transform="translate(285, 190)">
+      <rect width="275" height="175" rx="10" fill="url(#labCardGrad)" stroke="#1e293b" stroke-width="1.2"/>
+      <circle cx="16" cy="18" r="4" fill="#34d399"/>
+      <text x="28" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12.5" font-weight="700" fill="#e2e8f0">Ch08 · 短网址与缓存差异追踪</text>
+      <text x="216" y="21" font-family="ui-monospace, monospace" font-size="10" fill="#34d399">Base62</text>
+
+      <!-- Pipeline: Client -> Cache -> DB -->
+      <g transform="translate(14, 40)">
+        <rect width="70" height="26" rx="3" fill="#1e293b"/>
+        <text x="35" y="17" font-family="ui-monospace, monospace" font-size="8.5" fill="#e2e8f0" text-anchor="middle">Browser</text>
+
+        <path d="M 72 13 L 96 13" stroke="#64748b" stroke-width="1.2"/>
+        <polygon points="98,13 93,10 93,16" fill="#64748b"/>
+
+        <rect x="100" y="0" width="70" height="26" rx="3" fill="#0f2942" stroke="#0284c7" stroke-width="0.8"/>
+        <text x="135" y="17" font-family="ui-monospace, monospace" font-size="8.5" fill="#38bdf8" text-anchor="middle">Redirect</text>
+
+        <path d="M 172 13 L 196 13" stroke="#64748b" stroke-width="1.2"/>
+        <polygon points="198,13 193,10 193,16" fill="#64748b"/>
+
+        <rect x="200" y="0" width="47" height="26" rx="3" fill="#1e1b4b" stroke="#6366f1" stroke-width="0.8"/>
+        <text x="223" y="17" font-family="ui-monospace, monospace" font-size="8.5" fill="#a5b4fc" text-anchor="middle">DB/KV</text>
+      </g>
+
+      <!-- 301 vs 302 Divergence Matrix -->
+      <g transform="translate(14, 76)">
+        <rect width="247" height="42" rx="4" fill="#090d16" stroke="#1e293b" stroke-width="0.8"/>
+        <text x="8" y="16" font-family="ui-monospace, monospace" font-size="8.5" font-weight="700" fill="#f43f5e">301 Moved Perm:</text>
+        <text x="110" y="16" font-family="ui-monospace, monospace" font-size="8" fill="#94a3b8">浏览器强缓存 (跳过服务)</text>
+        <text x="8" y="32" font-family="ui-monospace, monospace" font-size="8.5" font-weight="700" fill="#34d399">302 Found (TTL):</text>
+        <text x="110" y="32" font-family="ui-monospace, monospace" font-size="8" fill="#94a3b8">精确回源统计点击数</text>
+      </g>
+
+      <g transform="translate(14, 126)">
+        <rect width="247" height="28" rx="4" fill="#132338" stroke="#0284c7" stroke-width="0.8"/>
+        <text x="8" y="18" font-family="ui-monospace, monospace" font-size="8.5" fill="#7dd3fc">哈希碰撞解决: Base62(ID) + 盐探测</text>
+      </g>
+    </g>
+  </g>
+</svg>
