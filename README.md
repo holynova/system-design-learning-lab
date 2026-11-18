@@ -1,9 +1,11 @@
+<p align="right"><a href="README.en.md">English</a></p>
+
 <p align="center">
   <img src="./assets/readme/hero.svg" width="100%" alt="系统设计实验册 — 三个副本节点 A、B 是新值 v2，C 还是旧值 v1，读请求只命中 C 就读到旧值">
 </p>
 
 <p align="center">
-  <a href="https://holynova.github.io/system-design-learning-lab/">▶ 在线做实验 Play Online</a>
+  <a href="https://holynova.github.io/system-design-learning-lab/">▶ 在线做实验</a>
   ·
   <a href="https://github.com/holynova/system-design-learning-lab">GitHub 仓库</a>
   ·
@@ -12,16 +14,14 @@
 
 系统设计实验册是 Alex Xu《系统设计面试》第一卷第 6、7、8 章的交互实验台：把抽象的分布式机制重构成零后端、纯前端的状态机——亲手调 R / W 门槛、注入网络分区与时钟回拨，看每一次延迟、溢出与缓存击穿如何真实发生。读懂机制，再谈论架构。
 
-System Design Learning Lab is an interactive workbench for chapters 6–8 of Alex Xu's *System Design Interview* (Vol. 1): zero-backend, pure-frontend state machines. Tune R / W quorums, inject network partitions and clock skew, and watch every delay, overflow, and cache stampede happen for real. Understand the mechanism before discussing the architecture.
-
-## 截图 / Screenshots
+## 截图
 
 <p align="center">
   <img src="./assets/readme/screenshot-desktop.png" width="560" alt="桌面端：第 06 章一份数据，三个答案，左侧章节导航，右侧实验说明与先猜一下选择题">
   <img src="./assets/readme/screenshot-mobile.png" width="160" alt="移动端：同一章的响应式布局，章节切换在顶部横排">
 </p>
 
-## 三个实验 / The 3 Labs
+## 三个实验
 
 ### 实验 01 · 第 06 章：KV 存储——一份数据，三个答案
 
@@ -47,14 +47,14 @@ System Design Learning Lab is an interactive workbench for chapters 6–8 of Ale
 
 每章另有知识地图、4 道练习、误区粉碎与 90 秒复述；实验状态在三章之间切换时完整保留。
 
-## 28 章精讲库 / All 28 Chapters
+## 28 章精讲库
 
 `chapters/` 收录第一卷与第二卷全部 28 章的面试重构精讲（权衡对比 + 答辩要点）：
 
 - **第一卷（15 章）**：从零到百万用户、粗略估算、面试框架、限流器、一致性哈希、KV 存储、唯一 ID 生成器、短网址、网络爬虫、通知系统、新闻提要系统、聊天系统、搜索自动完成、YouTube、Google Drive。
 - **第二卷（13 章）**：邻近服务、附近的好友、谷歌地图、分布式消息队列、指标监控与告警、广告点击聚合、酒店预订、分布式邮件服务、类 S3 对象存储、实时游戏排行榜、支付系统、数字钱包、股票交易所。
 
-## 本地运行 / Run Locally
+## 本地运行
 
 ```bash
 npm install
@@ -63,7 +63,7 @@ npm run build     # 生产构建（输出到 docs/）
 npm test          # 机制验证：Snowflake 编解码、Base62、KV 场景
 ```
 
-## 技术 / Tech
+## 技术
 
 - React + Vite，纯前端状态机模拟，零后端；所有实验在浏览器本地运行，不发起外网请求。
 - 核心模型在 `src/models.js`（Base62 / Snowflake 编解码 / FNV-1a 哈希 / KV 场景推演），内容在 `src/content.js`。
@@ -77,14 +77,3 @@ chapters/               28 章面试精讲（Markdown）
 scripts/verify.mjs      机制验证脚本（npm test）
 01-03*.md / REBUILD.md  学习规范、章节索引、制作路线与验收
 ```
-
-## English
-
-**System Design Learning Lab** is an interactive workbench for chapters 6–8 of Alex Xu's *System Design Interview* (Vol. 1) — zero-backend, pure-frontend state machines, plus all 28 chapters as interview notes in `chapters/`.
-
-- **Lab 01 · Ch.06 KV store**: 3 replicas (N=3), tunable R / W quorums, partition and delay injection, read-repair when R + W > N; LWW vs vector clocks compared.
-- **Lab 02 · Ch.07 Snowflake**: 64-bit field-by-field visualization (1 + 41 + 5 + 5 + 12) with exact BigInt shifts; 4097-request same-millisecond overflow test; clock-rollback injection (1000ms → 995ms); duplicate-ID collision test.
-- **Lab 03 · Ch.08 URL shortener**: Base62 bijection (`11157` ↔ `2TX`), truncated FNV-1a hashing with collision probing, 301 vs 302 cache-and-analytics tradeoff, full event log.
-- **28 chapters**: Vol. 1 (15) + Vol. 2 (13) as structured interview notes with tradeoffs and key points.
-- **Run it**: `npm install && npm run dev`. Verify the mechanisms with `npm test`.
-- **Tech**: React + Vite, pure client-side simulation. Teaching models only — the fixed 3-replica single-writer model does not replace production Raft/Paxos.
